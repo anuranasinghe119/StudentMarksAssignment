@@ -21,7 +21,7 @@ public class Main {
             String studentMarkStr = scanner.next();
             try {
                 double stdMark = Double.parseDouble(studentMarkStr);
-                if (stdMark <= 30 && stdMark > 0)
+                if (stdMark <= 30 && stdMark >= 0)
                     studentMarks[i] = stdMark;
                 else {
                     System.err.println("Number " + stdMark + " is out of Range.\nPlease enter number within valid" +
