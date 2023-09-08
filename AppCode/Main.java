@@ -4,10 +4,12 @@ public class Main {
     private static final int STUDENTS = 30;
     private static final Scanner scanner = new Scanner(System.in);
     static double[] studentMarks = new double[STUDENTS];
+    private static String assignmentName;
 
     public static void main(String[] args) {
         StartApplication();
         InputMarks();
+        PrintAllMarks();
     }
 
     public static void StartApplication() {
@@ -17,7 +19,7 @@ public class Main {
 
     public static void InputMarks() {
         for (int i = 0; i < STUDENTS; i++) {
-            System.out.print("Enter marks of Student " + i + " : ");
+            System.out.print("Enter marks of Student " + (i + 1) + " : ");
             String studentMarkStr = scanner.next();
             try {
                 double stdMark = Double.parseDouble(studentMarkStr);
@@ -34,6 +36,14 @@ public class Main {
                 i--;
                 System.out.println("\n");
             }
+        }
+    }
+
+    public static void PrintAllMarks() {
+        System.out.println("Done ! All Marks are entered success!");
+        System.out.println("Assignment - " + assignmentName);
+        for (int i = 0; i < STUDENTS; i++) {
+            System.out.println("Student " + (i + 1) + " Marks :" + studentMarks[i]);
         }
     }
 
