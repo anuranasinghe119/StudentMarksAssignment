@@ -10,11 +10,12 @@ public class Main {
         StartApplication();
         InputMarks();
         PrintAllMarks();
+        PrintHighestMarks();
     }
 
     public static void StartApplication() {
         System.out.println("Please enter assignment name :");
-        String assignmentName = scanner.next();
+        assignmentName = scanner.next();
     }
 
     public static void InputMarks() {
@@ -40,11 +41,21 @@ public class Main {
     }
 
     public static void PrintAllMarks() {
-        System.out.println("Done ! All Marks are entered success!");
+        System.out.println("\n Done ! All Marks are successfully added! \n");
         System.out.println("Assignment - " + assignmentName);
         for (int i = 0; i < STUDENTS; i++) {
             System.out.println("Student " + (i + 1) + " Marks :" + studentMarks[i]);
         }
+        System.out.println("\n");
+    }
+
+    public static void PrintHighestMarks() {
+        double maxNumber = Double.MIN_VALUE;
+        for (double studentMark : studentMarks) {
+            if (studentMark > maxNumber)
+                maxNumber = studentMark;
+        }
+        System.out.println("Highest mark that student obtained is :" + maxNumber);
     }
 
 }
