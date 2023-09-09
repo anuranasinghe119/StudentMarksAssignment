@@ -11,6 +11,7 @@ public class Main {
         InputMarks();
         PrintAllMarks();
         PrintHighestMarks();
+        PrintLowestMarks();
     }
 
     public static void StartApplication() {
@@ -56,6 +57,15 @@ public class Main {
                 maxNumber = studentMark;
         }
         System.out.println("Highest mark that student obtained is :" + maxNumber);
+    }
+
+    public static void PrintLowestMarks() {
+        double minNumber = Double.MAX_VALUE;
+        for (double studentMark : studentMarks) {
+            if (studentMark < minNumber)
+                minNumber = studentMark;
+        }
+        System.out.println("Lowest mark that student obtained is :" + minNumber);
     }
 
 }
