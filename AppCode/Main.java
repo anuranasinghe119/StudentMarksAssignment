@@ -12,6 +12,9 @@ public class Main {
         PrintAllMarks();
         PrintHighestMarks();
         PrintLowestMarks();
+        double mean = GetMean();
+        System.out.println("Mean of all marks:" + mean);
+
     }
 
     public static void StartApplication() {
@@ -34,7 +37,7 @@ public class Main {
                     System.out.println("\n");
                 }
             } catch (Exception e) {
-                System.err.print("Unable to convert number :" + e.getMessage());
+                System.err.print("Unable to convert - You entered invalid input :" + e.getMessage());
                 i--;
                 System.out.println("\n");
             }
@@ -66,6 +69,13 @@ public class Main {
                 minNumber = studentMark;
         }
         System.out.println("Lowest mark that student obtained is :" + minNumber);
+    }
+
+    public static double GetMean() {
+        double total = 0;
+        for (double studentMark : studentMarks)
+            total = total + studentMark;
+        return total / studentMarks.length;
     }
 
 }
