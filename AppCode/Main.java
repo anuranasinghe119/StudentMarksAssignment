@@ -14,7 +14,7 @@ public class Main {
         PrintLowestMarks();
         double mean = GetMean();
         System.out.println("Mean of all marks:" + mean);
-
+        DisplayStandardDeviation(mean);
     }
 
     public static void StartApplication() {
@@ -74,8 +74,15 @@ public class Main {
     public static double GetMean() {
         double total = 0;
         for (double studentMark : studentMarks)
-            total = total + studentMark;
+            total  += studentMark;
         return total / studentMarks.length;
     }
 
+    public static void DisplayStandardDeviation(double mean) {
+        double standardDeviation = 0;
+        for (double studentMark : studentMarks) {
+            standardDeviation += Math.pow(studentMark - mean, 2);
+        }
+        System.out.println("Standard Deviation for all the 30 students :" + Math.sqrt(standardDeviation / studentMarks.length));
+    }
 }

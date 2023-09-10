@@ -14,4 +14,6 @@ comment6.params=
 comment6.target=void\ PrintLowestMarks()
 comment7.params=
 comment7.target=double\ GetMean()
-numComments=8
+comment8.params=mean
+comment8.target=void\ DisplayStandardDeviation(double)
+numComments=9
