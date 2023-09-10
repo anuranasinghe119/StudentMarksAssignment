@@ -1,0 +1,24 @@
+Goal - To display mean and Standard deviation
+
+== Print mean marks ==
+
+BEGIN
+DECLARE MEAN AS 0
+DECLARE TOTAL AS 0
+FOR EACH MARK OF MARKS
+	TOTAL = TOTAL + MARK
+ENDFOR
+RETURN TOTAL / MARKS.SIZE (Since the array size is the student count)
+END
+
+
+== Print Standard deviation ==
+
+BEGIN
+INPUT MEAN
+DECLARE TEMP AS 0
+FOR EACH MARK OF MARKS
+	TEMP = TEMP + ((MARK - MEAN) * (MARK - MEAN)) 
+ENDFOR
+RETURN SQRT(STANDARDDEVIATION/MARKS.SIZE)
+END
